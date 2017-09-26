@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android = "http://schemas.android.com/apk/res/android"
+	xmlns:card_view = "http://schemas.android.com/apk/res-auto"
+	android:orientation = "vertical"
+	android:layout_width = "match_parent"
+	android:layout_height = "wrap_content">
+
+	<android.support.v7.widget.CardView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		card_view:cardCornerRadius="5dp"
+		card_view:cardUseCompatPadding="true"
+		card_view:cardMaxElevation="5dp"
+		android:id="@+id/paired_device_card">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:padding="10dp">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="5dp"
+				android:textColor="#2c2c2c"
+				android:textStyle="bold"
+				android:id="@+id/paired_device_name"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="5dp"
+				android:textColor="#2c2c2c"
+				android:textStyle="italic"
+				android:id="@+id/paired_device_mac_address"/>
+
+		</LinearLayout>
+
+	</android.support.v7.widget.CardView>
+
+</LinearLayout>
