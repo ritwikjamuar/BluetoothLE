@@ -73,6 +73,17 @@ public class BluetoothDeviceAdapter extends RecyclerView.Adapter<BluetoothDevice
 		notifyDataSetChanged ();
 	}
 
+	public boolean checkDevice ( BluetoothDevice device ) {
+		boolean isDeviceFound = false;
+		for ( BluetoothDevice d : mDeviceList ) {
+			if ( device.getAddress ().equals ( d.getAddress () ) ) {
+				isDeviceFound = true;
+				break;
+			}
+		}
+		return isDeviceFound;
+	}
+
 	public interface BluetoothDeviceListener {
 		void onBluetoothDeviceSelected ( BluetoothDevice device );
 	}

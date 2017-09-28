@@ -194,8 +194,10 @@ public class ScanActivity
 
 		// Add Found Devices to Recycler View.
 		if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ) {
-			mDevices.add ( result.getDevice () );
-			mAdapter.updateDeviceList ( mDevices );
+			if ( ! mAdapter.checkDevice ( result.getDevice () ) ) {
+				mDevices.add ( result.getDevice () );
+				mAdapter.updateDeviceList ( mDevices );
+			}
 		}
 	}
 
@@ -253,6 +255,7 @@ public class ScanActivity
 				) {
 					super.onCharacteristicRead ( gatt, characteristic, status );
 					// Switch between the various states of connection of BLE Device.
+					android.util.Log.e ( "Bluetooth", "onCharacteristic()" );
 					switch ( status ) {
 						case BluetoothGatt.GATT_SUCCESS :
 							onCharacteristicsRead ( characteristic );
